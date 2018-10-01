@@ -1,0 +1,66 @@
+# Willis Kirkham
+# 11084378
+# wrk027
+# C317 - A1 Q1
+# Synopsis: specifying the inverse arithmetic problem
+#
+
+Initial state:
+  Let result be the evaluation of the expression:
+    result = 0
+
+Goal state:
+  When result equals T, the target integer:
+  result == T
+
+Actions:
+  Let L be the list of integers
+  Let operand be the choice of integer from L
+
+  If result == 0, the actions are:
+    - addition of operand from L, +
+    - subtraction of operand from L, -
+
+  If result == 1 and operand == 1, the actions are:
+    - addition of operand from L, +
+
+  If result == 1 and operand == -1, the actions are:
+    - subtraction of operand from L, -
+    - multiplication by operand from L, *
+    - integer division by operand from L, /
+
+  If result == -1 and operand == 1, the actions are:
+    - subtraction of operand from L, -
+    - multiplication by operand from L, *
+    - integer division by operand from L, /
+
+  If result == -1 and operand == -1, the actions are:
+    - addition of operand from L, +
+    - multiplication by operand from L, *
+    - integer division by operand from L, /
+
+  If result > 1 or result < -1 and operand == 1 the actions are:
+    - addition of operand from L, +
+    - subtraction of operand from L, -
+
+  If result > 1 or result < -1 and operand == -1 the actions are:
+    - addition of operand from L, +
+    - subtraction of operand from L, -
+    - multiplication by operand from L, *
+    - integer division by operand from L, /
+
+  If result =/= 0 and operand =/= 1 or -1
+    - addition of operand from L, +
+    - subtraction of operand from L, -
+    - multiplication by operand from L, *
+    - integer division by operand from L, /
+
+  Note: once an integer has been used in an expression, it can not be used
+        again
+
+Effect of action / Transition model:
+  result is modified by performing the operation with the operand from L
+
+Path cost:
+  The quantity of operations performed to obtain the result, where each
+  operation has a step cost of 1
