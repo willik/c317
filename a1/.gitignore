@@ -1,5 +1,6 @@
 *.iml
 *.xml
+.idea
 
 
 # Compiled source #
