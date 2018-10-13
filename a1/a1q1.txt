@@ -2,8 +2,17 @@
 # 11084378
 # wrk027
 # C317 - A1 Q1
-# Synopsis: specifying the inverse arithmetic problem
 #
+# Synopsis: Specifying the inverse arithmetic problem and program design
+#
+
+##### 0. CONTENTS #####
+
+    1. Problem specification
+    2. Problem state representation
+    3. Problem class methods
+
+##### 1. PROBLEM SPECIFICATION #####
 
 Initial state:
   Let result be the evaluation of the expression:
@@ -11,45 +20,13 @@ Initial state:
 
 Goal state:
   When result equals T, the target integer:
-  result == T
+    result == T
 
 Actions:
   Let L be the list of integers
   Let operand be the choice of integer from L
 
-  If result == 0, the actions are:
-    - addition of operand from L, +
-    - subtraction of operand from L, -
-
-  If result == 1 and operand == 1, the actions are:
-    - addition of operand from L, +
-
-  If result == 1 and operand == -1, the actions are:
-    - subtraction of operand from L, -
-    - multiplication by operand from L, *
-    - integer division by operand from L, /
-
-  If result == -1 and operand == 1, the actions are:
-    - subtraction of operand from L, -
-    - multiplication by operand from L, *
-    - integer division by operand from L, /
-
-  If result == -1 and operand == -1, the actions are:
-    - addition of operand from L, +
-    - multiplication by operand from L, *
-    - integer division by operand from L, /
-
-  If result > 1 or result < -1 and operand == 1 the actions are:
-    - addition of operand from L, +
-    - subtraction of operand from L, -
-
-  If result > 1 or result < -1 and operand == -1 the actions are:
-    - addition of operand from L, +
-    - subtraction of operand from L, -
-    - multiplication by operand from L, *
-    - integer division by operand from L, /
-
-  If result =/= 0 and operand =/= 1 or -1
+  The actions are:
     - addition of operand from L, +
     - subtraction of operand from L, -
     - multiplication by operand from L, *
@@ -59,8 +36,53 @@ Actions:
         again
 
 Effect of action / Transition model:
-  result is modified by performing the operation with the operand from L
+  - the expression is appended with the operation, and the operand
+  - result is modified by performing the operation with the operand from L
 
 Path cost:
-  The quantity of operations performed to obtain the result, where each
+  The quantity of operations performed to obtain result, where each
   operation has a step cost of 1
+
+
+##### 2. PROBLEM STATE REPRESENTATION #####
+
+    The data structure representing a problem state consists of:
+    - expression: a string representing the expression that this state consists of, ie: '((3x4)+1)'
+    - result: the result of evaluating the expression using eval()
+
+
+##### 3. PROBLEM CLASS METHODS #####
+
+is_goal():
+    Checks if a state is a goal state
+        :param state: a Problem State instance
+        :return: boolean
+
+    Pseudocode:
+    - test if the result held in the state is equal to the target of the problem
+
+actions():
+    Produces a list of valid actions from a state
+    :param state: a Problem State instance
+    :return: returns a list of valid actions in the problem domain
+
+    Notes:
+    - actions are represented by a string consisting of the operation symbol followed by the operand
+
+    Pseudocode:
+
+    - Extract a list of used numbers from the expression
+    - Remove numbers already in the expression from the problem's bank of numbers
+    - Create the list of actions
+    - return the list of actions
+
+
+result():
+    Produces the new state that results from taking an action on an existing state
+    :param state: the state to perform the action on
+    :param action: an action as returned by actions(state)
+    :return: new Problem State instance
+
+    Pseudocode:
+    - concatenate the action string to the state's current expression string
+    - return a new state with the concatenated string as it's expression
