@@ -1,0 +1,52 @@
+# Willis Kirkham
+# 11084378
+# wrk027
+# C317 - a2
+
+# Synopsis: - a class for describing the problem state
+#           - a class for describing the problem
+
+
+
+class TargetedCodingState:
+    """A data structure to describe a state in the problem space"""
+
+    def __init__(self, target, operations, operands):
+        """
+        Creates a new state
+        """
+        self.target = target
+        self.operations = operations
+        self.operands = operands
+
+    def machine_exec(self, seq):
+
+        self.register = 0
+        for instruction in seq:
+            operator = instruction[0]
+            operand = instruction[1]
+            if operator == "ADD":
+                register += operand
+            elif operator == "SUB":
+                register -= operand
+            elif operator == "MUL":
+                register *= operand
+            elif operator == "DIV":
+                register = register / operand
+            elif operator == "NOP":
+                pass
+            else:
+                print('unknown operator', operator)
+
+
+class TargetedCodingProblem:
+    """A data structure to describe the problem"""
+
+    def __init__(self, target, bank):
+        """
+        Creates a new Problem instance
+        """
+        self.goal = target
+        self.bank = bank
+
+
