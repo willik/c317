@@ -4,16 +4,11 @@
 # C317 - a2q5
 
 # Synopsis:
-# Output of the Stochastic Hill Climbing Search search strategy after 200 iterations.
-# The operators correspond to:
-#   1 = add
-#   2 = sub
-#   3 = mul
-#   4 = div
-#   5 = NOP
 
-# NOTE: this output only shows the final result
 
+if solver not in ['RGS', 'RSS', 'HCS', 'RRHCS', 'SHCS']:
+
+File 1:
 
 Strategy                                |  RMSE | Ave Time
 -----------------------------------------------------------
@@ -23,6 +18,35 @@ Hill-climbing                           |       |
 Stochastic Hill-climbing                |       |
 Random-Restart Hill-climbing (50 × 20)  |       |
 Random-Restart Hill-climbing (10 × 100) |       |
+
+
+Avg time: 0.0212249732018
+RMSE: 0.0474736494357
+
+Avg time: 0.00522190093994
+RMSE: 0.101792506705
+
+Avg time: 0.10161808013916016
+RMSE: 0.20932686775095255
+
+Avg time: 0.006548795700073242
+RMSE: 0.36475925173035456
+
+
+
+
+
+File 2:
+
+Strategy                                |  RMSE | Ave Time
+-----------------------------------------------------------
+Random Guessing                         |       |
+Random Search                           |       |
+Hill-climbing                           |       |
+Stochastic Hill-climbing                |       |
+Random-Restart Hill-climbing (50 × 20)  |       |
+Random-Restart Hill-climbing (10 × 100) |       |
+
 
 
 Avg time: 0.09323684692382812

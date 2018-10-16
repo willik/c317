@@ -11,25 +11,26 @@ import sys as sys
 import TargetedCoding as P
 import a2q6 as Search
 
-if len(sys.argv) < 4:
-    print('usage: python runCD examplefile solver timelimit [restarts]')
-    sys.exit()
+# if len(sys.argv) < 4:
+#     print('usage: python runCD examplefile solver timelimit [restarts]')
+#     sys.exit()
+#
+# file = open(sys.argv[1], 'r')
+# solver = sys.argv[2]
+# timelimit = int(sys.argv[3])
 
-file = open(sys.argv[1], 'r')
-solver = sys.argv[2]
-timelimit = int(sys.argv[3])
-
-# file = open('a2_data_simple.txt', 'r')
-# solver = 'RGS'
-# timelimit = 200
+file = open('a2_data_simple.txt', 'r')
+solver = 'RRHCS'
+timelimit = 20
+restarts = 50
 
 if solver not in ['RGS', 'RSS', 'HCS', 'RRHCS', 'SHCS']:
     print('solver', solver, 'not known')
     sys.exit()
 
-if solver == 'RRHCS' and len(sys.argv) != 5:
-    print('missing depthlimit for RRHCS (last arg)')
-    sys.exit()
+# if solver == 'RRHCS' and len(sys.argv) != 5:
+#     print('missing depthlimit for RRHCS (last arg)')
+#     sys.exit()
 
 print(sys.argv)
 
@@ -62,7 +63,7 @@ for ex in examples:
 
     elif solver == 'RRHCS':
         problem = P.TargetedCodingProblem(ex[0], ex[1])
-        answer = Search.random_restart_hill_climbing_search(problem, timelimit, int(sys.argv[4]))
+        answer = Search.random_restart_hill_climbing_search(problem, timelimit, restarts)
 
     elif solver == 'SHCS':
         problem = P.TargetedCodingProblem(ex[0], ex[1])

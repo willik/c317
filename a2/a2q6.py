@@ -117,25 +117,25 @@ def random_restart_hill_climbing_search(problem, limit, restarts):
     start_time = time.time()
     now = start_time
 
-    best_guess = problem.random_state()
+    best_guess = problem.SearchResult(result=problem.random_state(), time=now)
     count = 0
     while (count != restarts):
 
         guess = hill_climbing_search(problem, limit)
 
         # calc the objective function and take the better state
-        diff_guess = abs(problem.target - guess.register)
-        diff_best = abs(problem.target - best_guess.register)
+        diff_guess = abs(problem.target - guess.result.register)
+        diff_best = abs(problem.target - best_guess.result.register)
         if diff_guess < diff_best:
             best_guess = guess
         elif diff_guess > diff_best:
             now = time.time()
-            return problem.SearchResult(result=best_guess, time=now - start_time)
+            return problem.SearchResult(result=best_guess.result, time=now - start_time)
 
         count += 1
 
     now = time.time()
-    return problem.SearchResult(result=best_guess, time=now - start_time)
+    return problem.SearchResult(result=best_guess.result, time=now - start_time)
 
 
 def stochastic_hill_climbing_search(problem, limit):
