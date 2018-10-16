@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Willis Kirkham
 # 11084378
 # wrk027
