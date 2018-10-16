@@ -1,0 +1,65 @@
+# Willis Kirkham
+# 11084378
+# wrk027
+# C317 - a2q4
+
+# Synopsis:
+# Output of the Random Restart Hill Climbing Search search strategy after 100 restarted of 200 iterations each.
+# The operators correspond to:
+#   1 = add
+#   2 = sub
+#   3 = mul
+#   4 = div
+#   5 = NOP
+
+# NOTE: this output only shows the final result
+
+target: 274161.0
+operands: [344, 397, 152, 307, 217]
+register: 274151
+operators: [1, 1, 1, 3, 5]
+
+target: 907.0
+operands: [117, 305, 329, 343, 444]
+register: 904
+operators: [1, 5, 5, 1, 1]
+
+target: 1282.0
+operands: [449, 239, 376, 117, 288]
+register: 1235
+operators: [1, 1, 1, 2, 1]
+
+target: 1275.0
+operands: [310, 195, 382, 213, 118]
+register: 1218
+operators: [1, 1, 1, 1, 1]
+
+target: 839.0
+operands: [469, 347, 499, 275, 364]
+register: 761
+operators: [1, 2, 5, 1, 1]
+
+target: 186.0
+operands: [365, 427, 132, 467, 238]
+register: 232.0
+operators: [2, 2, 4, 5, 1]
+
+target: 324.0
+operands: [234, 479, 331, 174, 112]
+register: 330.5114822546973
+operators: [2, 4, 1, 5, 5]
+
+target: -7013.0
+operands: [474, 131, 301, 194, 478]
+register: -2232.309278350516
+operators: [2, 2, 2, 4, 3]
+
+target: 144.0
+operands: [392, 142, 354, 482, 106]
+register: 120
+operators: [3, 1, 1, 2, 1]
+
+target: 258161.0
+operands: [191, 381, 193, 339, 233]
+register: 259102
+operators: [1, 1, 1, 3, 2]

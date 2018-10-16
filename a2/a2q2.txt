@@ -1,0 +1,67 @@
+# Willis Kirkham
+# 11084378
+# wrk027
+# C317 - a2q2
+
+# Synopsis:
+# Output of the Random Search search strategy after 200 iterations.
+# The operators correspond to:
+#   1 = add
+#   2 = sub
+#   3 = mul
+#   4 = div
+#   5 = NOP
+
+# NOTE: this output only shows the final result, not the operators being changed
+#       one at a time
+
+
+target: 274161.0
+operands: [344, 397, 152, 307, 217]
+register: 274151
+operators: [4, 3, 4, 5, 5]
+
+target: 907.0
+operands: [117, 305, 329, 343, 444]
+register: 860
+operators: [3, 5, 2, 4, 2]
+
+target: 1282.0
+operands: [449, 239, 376, 117, 288]
+register: 1235
+operators: [4, 1, 1, 4, 1]
+
+target: 1275.0
+operands: [310, 195, 382, 213, 118]
+register: 810
+operators: [2, 5, 2, 1, 2]
+
+target: 839.0
+operands: [469, 347, 499, 275, 364]
+register: 896
+operators: [4, 3, 5, 5, 3]
+
+target: 186.0
+operands: [365, 427, 132, 467, 238]
+register: 198
+operators: [4, 1, 4, 5, 5]
+
+target: 324.0
+operands: [234, 479, 331, 174, 112]
+register: 393.0
+operators: [4, 3, 1, 1, 5]
+
+target: -7013.0
+operands: [474, 131, 301, 194, 478]
+register: -1729.557251908397
+operators: [4, 5, 3, 2, 2]
+
+target: 144.0
+operands: [392, 142, 354, 482, 106]
+register: 142
+operators: [5, 2, 5, 1, 1]
+
+target: 258161.0
+operands: [191, 381, 193, 339, 233]
+register: 129159
+operators: [4, 2, 4, 4, 5]

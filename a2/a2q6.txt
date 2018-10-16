@@ -1,0 +1,30 @@
+# Willis Kirkham
+# 11084378
+# wrk027
+# C317 - a2q5
+
+# Synopsis:
+# Output of the Stochastic Hill Climbing Search search strategy after 200 iterations.
+# The operators correspond to:
+#   1 = add
+#   2 = sub
+#   3 = mul
+#   4 = div
+#   5 = NOP
+
+# NOTE: this output only shows the final result
+
+
+Strategy                                |  RMSE | Ave Time
+-----------------------------------------------------------
+Random Guessing                         |       |
+Random Search                           |       |
+Hill-climbing                           |       |
+Stochastic Hill-climbing                |       |
+Random-Restart Hill-climbing (50 × 20)  |       |
+Random-Restart Hill-climbing (10 × 100) |       |
+
+
+Avg time: 0.09323684692382812
+RMSE: 0.03393655618357251
+
