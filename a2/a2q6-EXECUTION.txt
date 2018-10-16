@@ -1,0 +1,23 @@
+# Willis Kirkham
+# 11084378
+# wrk027
+# C317 - a2q6
+
+# Synopsis: How to run my code for A2
+
+0. My solution requires Python 3
+1. Download all the a2q6 Python code.
+2. At the UNIX prompt:
+
+     UNIX$ python3 a2q6_run.py
+     usage: python a2q6_run.py examplefile solver timelimit [depthlimit]
+
+     solver can be: 'RGS', 'RSS', 'HCS', 'RRHCS', 'SHCS'
+     if solver is 'RRHCS' you must provide an additional restarts argument
+
+     timelimit in number of interations of the search algorithms
+
+  e.g.
+     UNIX$ python3 a2q6_run.py simple_examples.txt RGS 20
+     <output>
+

@@ -1,54 +1,62 @@
 # Willis Kirkham
 # 11084378
 # wrk027
-# C317 - a2q5
+# C317 - a2q6
 
-# Synopsis:
-
-
-if solver not in ['RGS', 'RSS', 'HCS', 'RRHCS', 'SHCS']:
-
-File 1:
-
-Strategy                                |  RMSE | Ave Time
------------------------------------------------------------
-Random Guessing                         |       |
-Random Search                           |       |
-Hill-climbing                           |       |
-Stochastic Hill-climbing                |       |
-Random-Restart Hill-climbing (50 × 20)  |       |
-Random-Restart Hill-climbing (10 × 100) |       |
+# Synopsis: Analysis of the local search results
 
 
-Avg time: 0.0212249732018
-RMSE: 0.0474736494357
+Data1:
 
-Avg time: 0.00522190093994
-RMSE: 0.101792506705
+Strategy                                |    RMSE      |   Ave Time
+---------------------------------------------------------------------
+Random Guessing                         |   0.25946    |   0.021225
+Random Search                           |   0.22998    |   0.0052219
+Hill-climbing                           |   0.20933    |   0.10162
+Stochastic Hill-climbing                |   0.36476    |   0.0065488
+Random-Restart Hill-climbing (50 × 20)  |   0.25524    |   0.0012311
+Random-Restart Hill-climbing (10 × 100) |   0.31120    |   0.0010145
 
-Avg time: 0.10161808013916016
-RMSE: 0.20932686775095255
-
-Avg time: 0.006548795700073242
-RMSE: 0.36475925173035456
-
-
-
+Data2:
 
 
-File 2:
+Strategy                                |    RMSE      |   Ave Time
+---------------------------------------------------------------------
+Random Guessing                         |   0.23009    |   0.0010394
+Random Search                           |   0.22413    |   0.0010053
+Hill-climbing                           |   0.25508    |   0.0009384
+Stochastic Hill-climbing                |   0.32133    |   0.0012157
+Random-Restart Hill-climbing (50 × 20)  |   0.21894    |   0.0010478
+Random-Restart Hill-climbing (10 × 100) |   0.21529    |   0.0011832
 
-Strategy                                |  RMSE | Ave Time
------------------------------------------------------------
-Random Guessing                         |       |
-Random Search                           |       |
-Hill-climbing                           |       |
-Stochastic Hill-climbing                |       |
-Random-Restart Hill-climbing (50 × 20)  |       |
-Random-Restart Hill-climbing (10 × 100) |       |
+1. Which algorithm had the lowest RMSE?
 
+    Data set 1: Hill-climbing
+    Data set 2: Random-Restart Hill-climbing (10 × 100)
 
+    Comments: I noticed a wide variation in RMSE each time I ran the algorithm on the dataset. I'm not that
+    confident in these results. The confidence would be improved by having more example problems or by
+    taking an average over a bunch of runs of the algorithm.
 
-Avg time: 0.09323684692382812
-RMSE: 0.03393655618357251
+2. Did random guessing work well? Explain why (or why not)?
+
+    Yes. But also it's a bit inconclusive. It had a RMSE just as good as other algorithms and it both had the second
+    slowest average time, and the 3rd fastest, depending on the data set.
+
+    One reason it would be faster is because it has less overhead when generating a new guess state than
+    some of the other algorithms have.
+
+3. Compare the two variations of Random-restart Hill-climbing. Is it better to have lots of short runs, or
+fewer long runs?
+
+    When there are fewer examples, it looks like fewer restarts and more iterations outperforms more restarts and
+    fewer iterations in terms of RMSE. But it seems like as the number of examples increase, RMSE stablizes
+    around the same value for short runs and long runs.
+
+    Concerning the average time, the results show they are about the same, which makes sense because in each case
+    the number of restarts and iterations does not change how long it takes the algorithm to produce a new guess.
+
+4. Do you think the RMSE would get bigger or smaller as the length of L increases?
+
+    Neither. I think RMSE would just stablize to a more consistent value between runs of the algorithms as L increases
 
