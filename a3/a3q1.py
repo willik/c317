@@ -6,19 +6,27 @@
 # Synopsis:
 
 
-class State:
+class LatinSqState:
 
-    def __init__(self):
-        """Represent the problem naively, as a 2-dimensional list (or array) of integers (the blank in thefile
-           could be stored as a zero). You could add a list of blank locations by giving the row and column as
-           integer pairs (e.g., (2, 3) ). This would help speed up some of the other functions"""
+    def __init__(self, square):
+        """Represent the problem naively, as a 2-dimensional list (or array) of integers"""
 
-        #
+        self.square = square
 
-        # list of blank locations
+        #self.blanks = build_blanks()
+
+    # def build_blanks(self, square):
+    #     """Create a list of blanks in a square. row and column as
+    #        integer pairs (e.g., (2, 3)"""
+    #
+    #     for row, item in enumerate(square)
+    #         for col, item in enumerate(square)
 
 
-class Problem:
+
+
+
+class LatinSqProblem:
 
     def __init__(self):
 

@@ -8,13 +8,12 @@
 import gc as gc
 import sys as sys
 
-#import a3.a3q1 as P
-#import a3.A1Search as Search
-
+import a3.a3q1 as P
+import a3.A1Search as A1Search
 
 
 # if len(sys.argv) < 4:
-#     print('usage: python a3_run examplefile solver timelimit [restarts]')
+#     print('usage: python a3_run examplefile solver timelimit [depthlimit]')
 #     sys.exit()
 # #
 # file = open(sys.argv[1], 'r')
@@ -26,13 +25,13 @@ solver = 'RRHCS'
 timelimit = 20
 restarts = 50
 
-if solver not in ['RGS', 'RSS', 'HCS', 'RRHCS', 'SHCS']:
+if solver not in ['DFS', 'BFS', 'DLS', 'IDS']:
     print('solver', solver, 'not known')
     sys.exit()
 
-# if solver == 'RRHCS' and len(sys.argv) != 5:
-#     print('missing depthlimit for RRHCS (last arg)')
-#     sys.exit()
+if solver == 'DLS' and len(sys.argv) != 5:
+    print('missing depthlimit for DLS (last arg)')
+    sys.exit()
 
 print(sys.argv)
 
@@ -49,6 +48,7 @@ for index, item in enumerate(file[1:]):
         skip -= 1
         continue
 
+    # get the size of the current latin square
     order = int(item)
 
     # construct the square
@@ -72,9 +72,11 @@ for ex in examples:
 
     gc.collect()  # clean up any allocated memory now, before we start timing stuff
 
-    if solver == 'RGS':
-        problem = P.TargetedCodingProblem(ex[0], ex[1])
-        answer = Search.random_guessing(problem, timelimit)
+    if solver == 'DFS':
+        problem = P.LatinSqProblem()
+        state = P.LatinSqState(ex)
+        searcher = A1Search.Search(problem, timelimit=timelimit)
+        answer = searcher.DepthFirstSearch(state)
 
 #     elif solver == 'RSS':
 #         problem = P.TargetedCodingProblem(ex[0], ex[1])
