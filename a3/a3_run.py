@@ -21,8 +21,8 @@ import a3.A1Search as A1Search
 # timelimit = int(sys.argv[3])
 
 file = open('LatinSquares.txt', 'r').readlines()
-solver = 'RRHCS'
-timelimit = 20
+solver = 'DFS'
+timelimit = 100000
 restarts = 50
 
 if solver not in ['DFS', 'BFS', 'DLS', 'IDS']:
@@ -72,6 +72,18 @@ for ex in examples:
 
     gc.collect()  # clean up any allocated memory now, before we start timing stuff
 
+    # testsq = [[1, 2, 3], [2, 0, 1], [3, 1, 2]]
+    # problem = P.LatinSqProblem()
+    # state = P.LatinSqState(testsq)
+    # problem.is_goal(state)
+    #
+    # actions = problem.actions(state)
+    # state2 = problem.result(state, actions[0])
+    #
+    # problem.is_goal(state2)
+    #
+    # searcher = A1Search.Search(problem, timelimit=timelimit)
+
     if solver == 'DFS':
         problem = P.LatinSqProblem()
         state = P.LatinSqState(ex)
@@ -111,18 +123,4 @@ for ex in examples:
 # avg_time = total_time/len(examples)
 # print('Avg time: ' + str(avg_time))
 # print('RMSE: ' + str(rmse))
-
-
-def read_squares(square):
-    """"
-    Puts latin squares in a list
-    """
-
-    square = []
-
-    for curr in square:
-        row = curr.rstrip().split(' ')
-        square.append(row)
-
-    return square
 
