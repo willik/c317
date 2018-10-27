@@ -90,6 +90,8 @@ for ex in examples:
         searcher = A1Search.Search(problem, timelimit=timelimit)
         answer = searcher.DepthFirstSearch(state)
 
+        print(str(answer))
+
 #     elif solver == 'RSS':
 #         problem = P.TargetedCodingProblem(ex[0], ex[1])
 #         answer = Search.random_search(problem, timelimit)
