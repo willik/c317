@@ -3,4 +3,4 @@
 # wrk027
 # C317 - a3q1
 
-# Synopsis:
+# Synopsis: Execution instructions

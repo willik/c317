@@ -3,4 +3,24 @@
 # wrk027
 # C317 - a3q3
 
-# Synopsis:
+# Synopsis: Execution instructions
+
+0. My solution requires Python 3
+1. Download all the a3q1 Python code.
+2. At the UNIX prompt:
+
+     UNIX$ python3 a4_run.py
+     usage: python a4_run.py examplefile question solver timelimit [depthlimit]
+
+     examplefile can be: one of the Latin Squares text files
+
+     question can be: 'a3q1', 'a3q2', 'a3q3', 'a3q4'
+
+     solver can be: 'RGS', 'RSS', 'HCS', 'RRHCS', 'SHCS'
+     if solver is 'RRHCS' you must provide an additional restarts argument
+
+     timelimit in number of seconds to run the search algorithms
+
+  e.g.
+     UNIX$ python3 a4_run.py LatinSquares.txt a3q1 DFS 10
+     <output>

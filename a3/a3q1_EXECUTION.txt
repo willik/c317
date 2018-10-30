@@ -1,7 +1,7 @@
 # Willis Kirkham
 # 11084378
 # wrk027
-# C317 - a3q4
+# C317 - a3q1
 
 # Synopsis: Execution instructions
 
@@ -24,3 +24,4 @@
   e.g.
      UNIX$ python3 a4_run.py LatinSquares.txt a3q1 DFS 10
      <output>
+
