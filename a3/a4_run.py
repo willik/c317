@@ -139,7 +139,7 @@ for ex in examples:
             num_failed += 1
             output = 'F - '
 
-        print(str(output) + 'S:' + num_completed + ', F:' + num_failed + str(answer))
+        print(str(output) + 'S:' + str(num_completed) + ',F:' + str(num_failed) + ' ' + str(answer))
 
     elif question == 'a3q3':
 
@@ -171,7 +171,7 @@ for ex in examples:
             num_failed += 1
             output = 'F - '
 
-        print(str(output) + 'S:' + num_completed + ', F:' + num_failed + str(answer))
+        print(str(output) + 'S:' + str(num_completed) + ',F:' + str(num_failed) + ' ' + str(answer))
 
     elif question == 'a3q4':
 
@@ -203,7 +203,7 @@ for ex in examples:
             num_failed += 1
             output = 'F - '
 
-        print(str(output) + 'S:' + num_completed + ', F:' + num_failed + str(answer))
+        print(str(output) + 'S:' + str(num_completed) + ',F:' + str(num_failed) + ' ' + str(answer))
 
     else:
         answer = None # and this will cause run time error below
