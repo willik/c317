@@ -7,6 +7,7 @@
 
 
 class LatinSqState:
+    """ Class for Latin Square states"""
 
     def __init__(self, square):
         """Represent the problem naively, as a 2-dimensional list (or array) of integers"""
@@ -30,9 +31,7 @@ class LatinSqState:
 
 
 class LatinSqProblem:
-
-    def __init__(self):
-        self.test = 0
+    """ Class for Latin Square problems"""
 
     def is_goal(self, state):
         """Checks if state is a true Latin Square."""
@@ -72,8 +71,7 @@ class LatinSqProblem:
         return actions
 
     def result(self, state, action):
-        """Creates a new State object with the blank filled in, as described in
-           action."""
+        """Creates a new State object with the blank filled in, as described in action."""
 
         # make copy of list array
         square_cp = []
